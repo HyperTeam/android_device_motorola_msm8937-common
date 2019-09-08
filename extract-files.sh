@@ -82,6 +82,10 @@ function blob_fixup() {
         patchelf --remove-needed libstagefright.so "${2}"
         ;;
 
+    vendor/lib/hw/camera.msm8937.so)
+        sed -i "s|service.bootanim.exit|service.bootanim.hold|g" "${2}"
+        ;;
+
     vendor/lib64/libmdmcutback.so)
         sed -i "s|libqsap_sdk.so|libqsapshim.so|g" "${2}"
         ;;
