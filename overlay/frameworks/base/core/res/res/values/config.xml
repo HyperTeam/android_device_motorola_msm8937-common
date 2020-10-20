@@ -470,4 +470,7 @@
     <!-- Enable Smart charging. -->
     <bool name="config_deviceSupportSmartCharging">true</bool>
 
+    <!-- Advanced restart -->
+    <bool name="config_powermenuadvanceddefault">true</bool>
+
 </resources>
