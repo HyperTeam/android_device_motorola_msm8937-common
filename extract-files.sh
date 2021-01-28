@@ -61,10 +61,6 @@ function blob_fixup() {
         patchelf --set-soname activity_recognition.msm8937.so "${2}"
         ;;
 
-    vendor/lib/hw/camera.msm8937.so)
-        patchelf --set-soname camera.msm8937.so "${2}"
-        ;;
-
     vendor/lib64/hw/gatekeeper.msm8937.so)
         patchelf --set-soname gatekeeper.msm8937.so "${2}"
         ;;
@@ -77,8 +73,13 @@ function blob_fixup() {
         sed -i 's|msm8953_mot_deen_camera.xml|msm8937_mot_camera_conf.xml|g' "${2}"
         ;;
 
-    vendor/lib/libmot_gpu_mapper.so | vendor/lib/libmmcamera_vstab_module.so)
+    vendor/lib/libjustshoot.so)
+        patchelf --add-needed libjustshoot_shim.so "${2}"
+        ;;
+
+    vendor/lib/libmot_gpu_mapper.so | vendor/lib/libmmcamera_vstab_module.so | vendor/lib/libjscore.so)
         sed -i "s/libgui/libwui/" "${2}"
+        patchelf --remove-needed libstagefright.so "${2}"
         ;;
 
     vendor/lib64/libmdmcutback.so)
