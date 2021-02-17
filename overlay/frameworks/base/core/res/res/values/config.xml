@@ -473,4 +473,16 @@
     <!-- Advanced restart -->
     <bool name="config_powermenuadvanceddefault">true</bool>
 
+    <!-- Remote server that can provide NTP responses. -->
+    <string translatable="false" name="config_ntpServer">1.android.pool.ntp.org</string>
+
+    <!-- Whether device has screen with higher aspect ratio -->
+    <bool name="config_haveHigherAspectRatioScreen">true</bool>
+
+    <!-- Whether camera shutter sound is forced or not  (country specific). -->
+    <bool name="config_camera_sound_forced">false</bool>
+
+    <!-- Whether or not we should show vendor mismatch message -->
+    <bool name="config_show_vendor_mismatch_message">false</bool>
+
 </resources>
