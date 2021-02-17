@@ -9,6 +9,12 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 # Get non-open-source specific aspects
 $(call inherit-product-if-exists, vendor/motorola/msm8937-common/msm8937-common-vendor.mk)
 
+# RR Stuffs
+TARGET_GAPPS_ARCH := arm64
+RR_BUILDTYPE := Official
+BUILD_RR_WALLPAPERS := true
+TARGET_FACE_UNLOCK_SUPPORTED := true
+
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
