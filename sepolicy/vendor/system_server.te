@@ -3,3 +3,6 @@ r_dir_file(system_server, vendor_idc_file);
 r_dir_file(system_server, vendor_keylayout_file);
 
 allow system_server rild:binder call;
+
+# Smart charging
+allow system_server sysfs_battery_supply:file { getattr open read write };
